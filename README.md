@@ -1,20 +1,11 @@
 # microscope plugin example
 
 ```lua
-local lists = require("microscope.lists")
-local example = require("microscope-example")
+local microscope = require("microscope")
+local microscope_example = require("microscope-example")
 
-local view = require("microscope").setup({ ... })
+microscope.setup({...})
+microscope.register(microscope_example.finders)
 
-vim.keymap.set(
-  "n",
-  "<leader>e",
-  view:finder({
-    open = function() end,
-    preview = example.show_hello,
-    chain = function(text)
-      return { example.lists.hello_world(), lists.fzf(text) }
-    end,
-  })
-)
+vim.keymap.set("n", "<leader>e", microscope.finders.example)
 ```

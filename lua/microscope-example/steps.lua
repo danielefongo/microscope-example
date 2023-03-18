@@ -1,6 +1,6 @@
-local lists = {}
+local steps = {}
 
-function lists.hello_world()
+function steps.hello_world()
   return {
     fun = function(on_data)
       on_data({ "Hello", "world", "!" })
@@ -8,4 +8,4 @@ function lists.hello_world()
   }
 end
 
-return lists
+return steps

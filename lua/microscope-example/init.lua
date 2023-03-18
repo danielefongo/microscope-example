@@ -1,9 +1,6 @@
-local example = {}
-
-example.lists = require("microscope-example.lists")
-
-function example.show_hello(data, window)
-  window:write({ data.text })
-end
-
-return example
+return {
+  finders = require("microscope-example.finders"),
+  steps = require("microscope-example.steps"),
+  preview = require("microscope-example.preview"),
+  open = require("microscope-example.open"),
+}
